@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <p1><b>Visuell teller</b></p1>
+</head>
+<body>
+    <div id="tallet">0</div>
+    <button id="mer">Mer</button>
+    <button id="mindre">Mindre</button>
+    
+
+<script>
+    let count = 0;
+    
+    document.getElementById("mer").onclick = function (){
+            count+=1;
+            document.getElementById("tallet").innerHTML = count;
+}
+    document.getElementById("mindre").onclick = function (){
+            count-=1;
+            document.getElementById("tallet").innerHTML = count;
+}
+
+</script>
+
+    
+</body>
+</html>

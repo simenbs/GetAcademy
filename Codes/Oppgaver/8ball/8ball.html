@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: black;
+        }
+
+        .arrow-up {
+            width: 0;
+            height: 0;
+            margin-bottom: 30px;
+            border-left: 70px solid transparent;
+            border-right: 70px solid transparent;
+            border-bottom: 130px solid blue;
+            display: flex;
+            justify-content: center;
+        }
+
+        .arrow-up div {
+            padding-top: 50px;
+            font-size: small;
+            color: white;
+        }
+
+        input {
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <div class="container">
+            <div class="arrow-up">
+                <div id="magic8BallOutput"></div>
+            </div>
+        </div>
+        <br>
+        <input onclick="shakeIt()" type="button" value="Rist Ballen">
+    
+        <script>
+            let checkagain = '';
+            let output = document.getElementById('magic8BallOutput');
+            const magic8Ball = ['It is certain', 'It is decidedly so', 'Without a doubt', 'Yes definitely', 'You may rely on it', 'As I see it, yes', 'Most likely', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy, try again', 'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again', "Don't count on it", 'My reply is no', 'My sources say no', 'Outlook not so good', 'Very doubtful']
+            function shakeIt() {
+                check = magic8Ball[Math.floor(Math.random() * 20)]
+                if (check !== checkagain){
+                    output.innerHTML = check;
+                    checkagain = check;
+                }
+                else{
+                   shakeIt();
+                }
+            }
+        </script>
+    </body>
+    
+    </html>
+    
+</body>
+</html>

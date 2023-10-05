@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        
+        .ball8 {
+            height: 500px;
+            width: 500px;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .whiteCircle {
+            background-color: white;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 10px black;
+        }
+
+        .font {
+            font-size: 150px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+<script>
+
+    //------------------------------------------------------------------MODEL-------------------------------------------------------------------------------
+    let svar = [
+        'Enkelte ting trenger man ikke vite svaret på',
+        'Spør mordi',
+        'Jauda', 
+        'Kanskje' , 
+        'Mest sannsynlig', 
+        'Tja' , 
+        'Nei' , 
+        'Trur ikke det gitt',
+        'Ja',
+        'Usikker',
+        'Visst faen',
+        'Det ser lyst ut',
+        ];
+    let roll;
+
+
+    //------------------------------------------------------------------VIEW-------------------------------------------------------------------------------
+    function updateView(){
+        let html = document.getElementById("app");
+        html.innerHTML = "";
+
+        html.innerHTML += /*HTML*/`
+            <div>
+                <input name="questionInput">
+                <button onclick="getAnswer()">Spør Magic 8 Ball</button>
+            </div>
+            <div class="ball8">
+                <div class="whiteCircle">
+                    <div class="font">${roll == null || undefined ? "" : roll}</div>
+                </div>
+            </div>
+            <div>${roll == null || undefined ? "" : svar[roll]}</div>
+        `;
+        //er roll lik null eller undefined ? hvis den er det setter vi verdien til "", hvis ikke (:) setter vi verdien til roll
+        //roll == null || undefined ? "" : roll
+    }
+
+
+    //-----------------------------------------------------------------CONTROLLER---------------------------------------------------------------------------
+    function getAnswer(){
+        let newRoll = roll; 
+
+        while(newRoll == roll){
+            newRoll = Math.floor(Math.random() * svar.length);
+        }
+        roll = newRoll;
+
+        updateView();
+
+
+    }
+
+    updateView()
+</script>
+</body>
+
+</html>

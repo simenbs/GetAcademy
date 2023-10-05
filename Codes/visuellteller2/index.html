@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visuellteller2</title>
+</head>
+
+<body>
+
+    <div class="teller">  // klassen teller er en større gruppe av id'er
+
+        <button class="knapp" onclick="mindre()">◀</button> // Her henter vi classen knappen, for å gi den en onclick funksjon, og funksjonen kaller vi mer 
+        <button class="knapp" onclick="mer()">▶</button> 
+
+        <div id="value" class="value">1</div> 
+    </div>
+
+</body>
+<script>
+
+    let verdi = 1; // dette er en "let" variabel som lar oss gi ordet verdi 1.
+    let value = document.getElementById('value'); // "document er en global variabel, hvorpå vi henter taggen 'value' fra html'en vår"
+    value.innerHTML = verdi; 
+
+        function mer() {
+            verdi = verdi + 1; 
+            value.innerHTML = verdi;
+      }
+      function mindre() {
+        verdi = verdi - 1;
+        value.innerHTML = verdi;
+      }
+
+
+</script>
+
+</html>

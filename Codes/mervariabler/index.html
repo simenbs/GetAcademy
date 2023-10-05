@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MerVariabler</title>
+</head>
+<body>
+    <div id="output"></div><br>
+    <button onclick="setNum(16)">Set number to 16</button>
+    <button onclick="setNum(47)">Set number to 47</button>
+    <br><br>
+    <button onclick="increaseNum()"> Increase number By one</button>
+    <button onclick="secondNum()">Add 2</button>
+
+    <script>
+        var outputDiv = document.getElementById('output');
+        var numToShow = 0;
+
+        function setNum(selectedNum){
+            numToShow = selectedNum;
+            outputDiv.innerHTML = numToShow;
+        }
+
+        function increaseNum(){
+            numToShow++;
+            //numToShow = numToShow +1
+            outputDiv.innerHTML = numToShow;
+        }
+
+        function secondNum(){
+            var number2 = 2;
+
+            outputDiv.innerHTML = numToShow + number2;
+            console.log(numToShow, "<- dette er verdien i numToShow -- dette er verdien i number2--->",number2);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="hovedDiv"></div>
+    <button onclick="tulleknapp('red',50,100)">tullknapp</button>
+    <button onclick="tulleknapp('blue',75,200)">ikketrykk</button>
+
+
+    <script>
+        function tulleknapp(color,width,height) {
+            document.getElementById('hovedDiv').innerHTML =
+                ` <div style="background-color:${color}; width:${width}%; height:${height}px; "> `;
+        }
+
+    </script>
+</body>
+
+</html>

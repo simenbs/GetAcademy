@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mainDiv">Dette er innerHTML som du sikker vet</div>
+    <button onclick="test1()">Endrefargeogtekst</button>
+    <button onclick="test2()">Denne også</button>
+
+
+    <script>
+
+        function test1(color,fontSize,tekst) {
+            document.getElementById('mainDiv').style.color = "red";
+            document.getElementById("mainDiv").style.fontSize = "50px";
+            document.getElementById("mainDiv").innerHTML = "fadderullan";
+
+
+            console.log(test1)
+        }
+
+        function test2(color,fontSize,test) {
+            document.getElementById('mainDiv').style.color = "blue";
+            document.getElementById("mainDiv").style.fontSize = "100px";
+            document.getElementById("mainDiv").innerHTML = "klondrian";
+
+        }
+    </script>
+    
+</body>
+</html>

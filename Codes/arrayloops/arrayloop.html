@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app"></div>
+    <input type="text" id="itemInput">
+    <button onclick="addItem()">Legg til i handlekurv</button>
+
+
+
+
+    <script>
+
+        const app = document.getElementById('app');
+        const handleKurv = ['Eple', 'Brød', 'Erter', 'Egg', 'Melk'];
+        let variabel = '';
+
+        updateview();
+        function updateview() {
+            let html = ``;
+            html += `<button onclick="seHandlekurv()">
+                Sjekk Handlekurven
+                </button>
+                ${variabel} `;
+            app.innerHTML = html;
+
+
+        }
+
+        function seHandlekurv() {
+            for (let i = 0; i < handleKurv.length; i++) {
+                console.log(`Hva ligger i kurven ${i} i loopen så ser jeg: ${handleKurv[i]}`)
+                variabel += `<li>Hva ligger i kurven ${i} i loopen så ser jeg: ${handleKurv[i]}</li>`;
+                updateview();
+
+            }
+
+        }
+
+        function addItem() {
+            const itemInput = document.getElementById('itemInput');
+            const newItem = itemInput.value;
+            handleKurv.push(newItem);
+            itemInput.value = '';
+            updateview();
+       }
+    </script>
+</body>
+
+</html>

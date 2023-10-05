@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="lilla boks" onclick="changeColor(this)"></div>
+    <div class="green boks" onclick="changeColor(this)"></div>
+    <div class="rød boks" onclick="changeColor(this)"></div>
+
+</body>
+
+<script>
+
+function changeColor(element){
+ element.style.backgroundColor = "yellow"
+ element.innerHTML ="Frustrert"
+console.log(element)
+}
+
+
+</script>
+<style>
+
+.boks {
+
+    height: 100px;
+    width: 100px;
+}
+
+.lilla{
+    background-color: purple;
+}
+
+.green{background-color: green;
+}
+
+.rød{background-color: red;
+}
+
+
+</style>
+
+
+
+
+</html>

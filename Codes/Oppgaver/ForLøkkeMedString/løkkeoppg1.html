@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocal Telle </title>
+</head>
+<body>
+    <div id="app"></div>
+
+        <script>    
+        let writeString = '';
+        let aCounter = 0;
+        let eCounter = 0;
+        let iCounter = 0;
+        let oCounter = 0;
+        let uCounter = 0;
+        let yCounter = 0;
+        let æCounter = 0;
+        let øCounter = 0;
+        let åCounter = 0;
+
+
+            updateView();
+            function updateView(){
+                let html = /*html*/ `
+                <input type="button" value="show string" onclick="showString('Arne er ikke å finne uten at Yvonne forteller om været hun ønsker å ha')">
+                <div>${writeString}</div>
+                `;
+                document.getElementById('app').innerHTML = html;
+            }
+
+            function showString(inputString){
+                for(let index = 0; index<=inputString.length; index++){
+                    writeString += inputString.charAt(index);
+                    if(inputString.charAt(index) == 'a')
+                    aCounter ++;
+                    if(inputString.charAt(index) == 'e')
+                    eCounter ++;
+                    if(inputString.charAt(index) == 'i')
+                    iCounter ++;
+                    if(inputString.charAt(index) == 'o')
+                    oCounter ++;
+                    if(inputString.charAt(index) == 'u')
+                    uCounter ++;
+                    if(inputString.charAt(index) == 'y')
+                    yCounter ++;
+                    if(inputString.charAt(index) == 'æ')
+                    æCounter ++;
+                    if(inputString.charAt(index) == 'ø')
+                    øCounter ++;
+                    if(inputString.charAt(index) == 'å')
+                    åCounter ++;
+                }
+                    
+
+                writeString += '<li>' + 'a ' + aCounter + '</li>';
+                writeString += '<li>' + 'e ' + eCounter + '</li>';
+                writeString += '<li>' + 'i ' + iCounter + '</li>';
+                writeString += '<li>' + 'o ' + oCounter + '</li>';
+                writeString += '<li>' + 'u ' + uCounter + '</li>';
+                writeString += '<li>' + 'y ' + yCounter + '</li>';
+                writeString += '<li>' + 'æ ' + æCounter + '</li>';
+                writeString += '<li>' + 'ø ' + øCounter + '</li>';
+                writeString += '<li>' + 'å ' + åCounter + '</li>';
+                updateView();
+                }
+
+
+
+
+    
+       </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>returverdier</title>
+</head>
+<body>
+
+    <div id="mainDiv"></div>
+    <button onclick="createAndShowHtml('green', 'heisan', 30, 'brown',)"> test 1</button>
+    <button onclick="createAndShowHtml('gray', 'yes', 20, 'red')"> test 2</button>
+    <button onclick="createAndShowHtml('yellow', 'lolas', 10, 'pink')"> test 3</button>
+
+
+<script>
+function createAndShowHtml(color,text,fontsize,textColor) {
+    document.getElementById('mainDiv').innerHTML = `
+    <div ${createStyle(color, fontsize, textColor)}>${text}</div>
+    `;
+}
+
+function createStyle(color, fontSize, textColor){
+    return `style="${createbackground(color)} font-size ${fontSize}px; color: ${textColor};"`
+}
+
+
+function createbackground(color){
+    return `background-color: ${color};`;
+}
+// Kaller på en funksjon gjennom en annen funksjon. Du legger det som er bak return inn i parameteret, slik at den blir 
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button onclick="play('our time.wav')">Spill av Our time</button><br>
+    <button onclick="play('Von Gustaph.wav')">Spill av Von Gustaph</button><br>
+    <button onclick="play('FEELING.wav')">Spill av Feeling</button><br>
+    <img src="mushromwaterfall.jpg" alt="Dame i skogen" width="500" height="350" style="float: left; margin-right: 10px;">
+
+    <audio id="audioPlayer" controls>
+        <source src="Our time.wav" type="audio/wav">
+    </audio>
+    <script>
+
+        function play(audioFile) {
+            var audioPlayer = document.getElementById("audioPlayer");
+            audioPlayer.src = audioFile;
+            audioPlayer.play();
+       }
+
+
+
+    </script>
+</body>
+
+</html>

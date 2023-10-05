@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    
+<body>
+    <div id="app"></div>
+    <br>
+
+    <button onclick="doble()">Doble</button>
+    <button onclick="mer()">Øke tallet med 1</button>
+    <button onclick="reset()">resette tallet til 1</button>
+    <button onclick="vis()">vis frem tallene</button>
+    <br>
+    <div id="tallene"></div>
+    
+    <script>
+        //model
+        var tall = 1;
+
+        //view
+        function updateView(){
+            let html = document.getElementById("app");
+            html.innerHTML = "";
+            html.innerHTML += `${tall}`;
+        }
+
+        //controller
+        function doble(){
+            if (tall * 2 > 10) {
+                return;
+            }
+            tall *= 2;
+            updateView();
+        }
+
+        /*
+        for (let index = 0; index < array.length; index++) {
+            const element = array[index];
+            
+        }
+
+        return    - stopper hele funksjonen loopen er inni
+        break     - stopper hele loopen (ikke funksjonen)
+        continue  - stopper "denne" iterasjonen av loopen
+        */
+
+
+        function mer(){
+            if (tall + 1 > 10) {
+                return;
+            }
+            tall += 1;
+            updateView();
+        }
+
+        function reset(){
+            tall = 1;
+            updateView();
+        }
+
+        function vis(){
+            let output = ""; //først setter vi output til en tom string
+            for (let index = 0; index < tall; index++) { 
+                output += "<div>" + (index + 1) + "</div>"; //lag en ny div med index + 1 (fordi index starter på 0) som innhold, og legg til dette i output variablen
+                //denne vil da kjøre like mange ganger som verdien til variablen "tall"
+            }
+
+            let html = document.getElementById("tallene"); //hent en referanse til elementet med id'en "tallene"
+            html.innerHTML = output;//sett innholdet i elementet med id'en "tallene" til output
+            updateView(); //oppdater viewet så vi ser endringene
+            
+        }
+
+
+
+
+          updateView();
+    </script>
+</body>
+</html>
+
+
+
+<!-- 
+Lag et program som starter med å vise frem tallet 1.
+  Lag 4 knapper som skal gjøre følgende:
+    “doble tallet”, 
+    “øke tallet med 1”,
+    ”resette tallet til 1”
+    “lage like mange div`er som man har økt tallet med, som viser frem sitt unike tall i rekken”
+       Feks: 
+         du har økt tallet til 5
+
+         <div>1</div>
+         <div>2</div>
+         <div>3</div>
+         <div>4</div>
+         <div>5</div>
+
+  Tallet skal ikke kunne overskride verdien 10
+ -->
